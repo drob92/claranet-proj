@@ -1,1 +1,1 @@
-# covisian-proj
+# claranet-proj
