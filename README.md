@@ -1,46 +1,45 @@
-# claranet-proj
+## claranet-proj
 
 
-# Clonare progetto in locale su percorso desiderato:
+### Clonare progetto in locale su percorso desiderato:
 	cd path
 	git clone https://github.com/drob92/claranet-proj
 
-# In alternativa, per configurare tutto da capo :
+### In alternativa, per configurare tutto da capo :
 
-# STEP 1 
-# Installazione AWS CLI da .exe scaricato sul sito web ufficiale
-# Creare istanza EC2 su AWS https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1#
-# Scaricare la chiave .pem per effettuare connessione SSH nei passaggi successivi
-# STEP 2 
-# Eseguire da prompt dei comandi in locale: 
+## STEP 1 
+### Installazione AWS CLI da .exe scaricato sul sito web ufficiale
+### Creare istanza EC2 su AWS https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1#
+### Scaricare la chiave .pem per effettuare connessione SSH nei passaggi successivi
+## STEP 2 
+### Eseguire da prompt dei comandi in locale: 
 
 	aws configure
 
-# STEP 3 
-# Inserire i parametri configurati secondo l'istanza EC2
+## STEP 3 
+### Inserire i parametri configurati secondo l'istanza EC2
 
 	AWS Access Key ID: ************
 	AWS Secret Access Key: ************
 	Default region name: eu-west-1
 	Default output format: json
 
-# STEP 4 
-# Eseguire check con il cmd
+## STEP 4 
+### Eseguire check con il cmd
 
 	aws sts get-caller-identity
 
-# STEP 5 
-# Installazione Terraform da .exe scaricato dal sito web ufficiale
-# STEP 6 
-# Creare cartella 
+## STEP 5 
+### Installazione Terraform da .exe scaricato dal sito web ufficiale
+## STEP 6 
+### Creare cartella 
 
 	mkdir path/claranet-proj/terraform
 
-# STEP 7 
-# Creare al suo interno il file main.tf con il seguente contenuto
-# Una VPC, una subnet, un Internet Gateway e un'istanza EC2.
+## STEP 7 
+### Creare al suo interno il file main.tf con il seguente contenuto
+### Una VPC, una subnet, un Internet Gateway e un'istanza EC2.
 
-# -------------------------
 	# main.tf
 	# Definisci il provider AWS
 	provider "aws" {
@@ -93,23 +92,22 @@
 	    Name = "WordPress-Server"
 	  }
 	}
-# --------------------
 
-# STEP 8 
-# Inizializzare terraform da prompt, così da creare tutte le risorse definite nel file main.tf
+## STEP 8 
+### Inizializzare terraform da prompt, così da creare tutte le risorse definite nel file main.tf
 
 	cd path/claranet-proj/terraform
 	terraform init
 	terraform apply
 
 
-# STEP 8 
-# Con il prompt dei comandi con il login di AWS, recarsi sulla cartella dove viene tenuta salvata la chiave .pem. 
+## STEP 8 
+### Con il prompt dei comandi con il login di AWS, recarsi sulla cartella dove viene tenuta salvata la chiave .pem. 
 
 	cd path/claranet-proj 
 	ssh -i proj_chiavi.pem ec2-user@inserire-ec2-public-ip
 
-# Installare e configurare Wordpress
+### Installare e configurare Wordpress
 
 	sudo wget https://wordpress.org/latest.tar.gz
 	sudo tar -xzf latest.tar.gz
@@ -120,13 +118,13 @@
 	sudo chmod -R 755 /var/www/html
 
 
-# STEP 9 
-# Creazione MySql tramite Amazon RDS. Quindi andare nel servizio RDS, "Create database" e scegliere "MySQL" come motore.
+## STEP 9 
+### Creazione MySql tramite Amazon RDS. Quindi andare nel servizio RDS, "Create database" e scegliere "MySQL" come motore.
 
 
-# Finita l'installazione di WP e del DB, all'interno del file wp-config.php del 
+### Finita l'installazione di WP e del DB, all'interno del file wp-config.php del 
 	sudo nano /path/wordpress/wp-config.php
-# configurare le voci
+### configurare le voci
 	define('DB_NAME', 'inserire-database-name');
 	define('DB_USER', 'inserire-username');
 	define('DB_PASSWORD', 'inserire-password');
@@ -134,12 +132,12 @@
 
 
 
-# STEP 10 ------------------------------------
-# Testare accesso da browser (ip non piu valido)
+## STEP 10 ------------------------------------
+### Testare accesso da browser (ip non piu valido)
 	http://ec2-3-252-72-19.eu-west-1.compute.amazonaws.com
 	http://ec2-3-252-72-19.eu-west-1.compute.amazonaws.com/wp-admin
 
 
-# Note
-# Ho rimosso manualente l'eseguibile di terraform che viene installato su terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.64.0/windows_386/terraform-provider-aws_v5.64.0_x5.exe
-# Occupava 500mb e non era possibile caricarlo con il mio piano GitHub. In caso di esecuzione di tutto il sistema, ripristinare il file nel path di appartenza 
+### Note
+### Ho rimosso manualmente l'eseguibile di terraform che viene installato su terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.64.0/windows_386/terraform-provider-aws_v5.64.0_x5.exe
+### Occupava 500mb e non era possibile caricarlo con il mio piano GitHub. In caso di esecuzione di tutto il sistema, ripristinare il file nel path di appartenza 
