@@ -9,8 +9,10 @@
 
 ## STEP 1 
 ### Installazione AWS CLI da .exe scaricato sul sito web ufficiale
-### Creare istanza EC2 su AWS https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1#
-### Scaricare la chiave .pem per effettuare connessione SSH nei passaggi successivi
+https://aws.amazon.com/it/cli/
+### Creare istanza EC2 su AWS 
+https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1#
+### Scaricare la chiave privata .pem relativa all'istanza EC" per effettuare connessione SSH nei passaggi successivi
 ## STEP 2 
 ### Eseguire da prompt dei comandi in locale: 
 
@@ -31,6 +33,7 @@
 
 ## STEP 5 
 ### Installazione Terraform da .exe scaricato dal sito web ufficiale
+https://developer.hashicorp.com/terraform/install?product_intent=terraform
 ## STEP 6 
 ### Creare cartella 
 
@@ -132,7 +135,7 @@
 
 
 
-## STEP 10 ------------------------------------
+## STEP 10
 ### Testare accesso da browser (ip non piu valido)
 	http://ec2-3-252-72-19.eu-west-1.compute.amazonaws.com
 	http://ec2-3-252-72-19.eu-west-1.compute.amazonaws.com/wp-admin
