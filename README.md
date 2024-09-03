@@ -1,7 +1,7 @@
 ## claranet-proj
 
 
-Per avere il progetto in locale, usare il comandp per clonare su percorso desiderato:
+Per avere il progetto in locale, usare il comando per clonare su percorso desiderato:
 ```
 cd path
 git clone https://github.com/drob92/claranet-proj
@@ -16,7 +16,7 @@ https://aws.amazon.com/it/cli/
 ### Creare istanza EC2 su AWS 
 https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1#
 
-### Scaricare la chiave privata .pem relativa all'istanza EC" per effettuare connessione SSH nei passaggi successivi
+### Scaricare la chiave privata .pem relativa all'istanza EC2 per effettuare connessione SSH nei passaggi successivi
 
 ## STEP 2 
 Eseguire da prompt dei comandi in locale: 
@@ -152,6 +152,7 @@ Testare accesso da browser (ip non piu valido)
 	http://ec2-3-252-72-19.eu-west-1.compute.amazonaws.com/wp-admin
 
 
-Note
-Ho rimosso manualmente l'eseguibile di terraform che viene installato su terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.64.0/windows_386/terraform-provider-aws_v5.64.0_x5.exe
+### Note
+- Ho rimosso manualmente l'eseguibile di terraform che viene installato su terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.64.0/windows_386/terraform-provider-aws_v5.64.0_x5.exe.
 Occupava 500mb e non era possibile caricarlo con il mio piano GitHub. In caso di esecuzione di tutto il sistema, ripristinare il file nel path di appartenza 
+- Chiavi, db e istanze attivate su cloud, sono state cessate ed eliminate.
