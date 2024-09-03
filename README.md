@@ -1,7 +1,7 @@
 ## claranet-proj
 
 
-Per avere il progetto in locale clonare progetto in locale su percorso desiderato:
+Per avere il progetto in locale, usare il comandp per clonare su percorso desiderato:
 ```
 cd path
 git clone https://github.com/drob92/claranet-proj
