@@ -1,18 +1,23 @@
 ## claranet-proj
 
 
-Clonare progetto in locale su percorso desiderato:
-	cd path
-	git clone https://github.com/drob92/claranet-proj
+Per avere il progetto in locale clonare progetto in locale su percorso desiderato:
+```
+cd path
+git clone https://github.com/drob92/claranet-proj
+```
 
-In alternativa, per configurare tutto da capo :
+In alternativa, per configurare manualmente tutto da capo:
 
 ## STEP 1 
-Installazione AWS CLI da .exe scaricato sul sito web ufficiale
+### Installazione AWS CLI da .exe scaricato sul sito web ufficiale:
 https://aws.amazon.com/it/cli/
-Creare istanza EC2 su AWS 
+
+### Creare istanza EC2 su AWS 
 https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1#
-Scaricare la chiave privata .pem relativa all'istanza EC" per effettuare connessione SSH nei passaggi successivi
+
+### Scaricare la chiave privata .pem relativa all'istanza EC" per effettuare connessione SSH nei passaggi successivi
+
 ## STEP 2 
 Eseguire da prompt dei comandi in locale: 
 ```
@@ -131,7 +136,7 @@ Finita l'installazione di WP e del DB, all'interno del file wp-config.php del
 ```
 sudo nano /path/wordpress/wp-config.php
 ```
-configurare le voci
+Configurare le voci e salvare:
 	
 ```
 define('DB_NAME', 'inserire-database-name');
